@@ -6,10 +6,9 @@ import (
 	"github.com/urfave/cli"
 )
 
-// TODO implement
-var launchCommand = cli.Command{
-	Name:  "launch",
-	Usage: "launch a pod",
+var runCommand = cli.Command{
+	Name:  "run",
+	Usage: "launch a container",
 	Action: func(context *cli.Context) error {
 		return fmt.Errorf("this functionality is not yet implemented")
 	},

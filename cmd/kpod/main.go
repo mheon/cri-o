@@ -14,7 +14,7 @@ func main() {
 	app.Version = "0.0.1"
 
 	app.Commands = []cli.Command{
-		launchCommand,
+		runCommand,
 	}
 
 	if err := app.Run(os.Args); err != nil {
