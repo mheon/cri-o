@@ -10,6 +10,7 @@ import (
 
 // Default paths if none are specified
 const (
+	CRIOConfigPath      = "/etc/crio/crio.conf"
 	crioRoot            = "/var/lib/containers/storage"
 	crioRunRoot         = "/var/run/containers/storage"
 	conmonPath          = "/usr/local/libexec/crio/conmon"

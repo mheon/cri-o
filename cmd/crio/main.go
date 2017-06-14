@@ -20,8 +20,6 @@ import (
 	"k8s.io/kubernetes/pkg/kubelet/api/v1alpha1/runtime"
 )
 
-const crioConfigPath = "/etc/crio/crio.conf"
-
 func mergeConfig(config *server.Config, ctx *cli.Context) error {
 	// Don't parse the config if the user explicitly set it to "".
 	if path := ctx.GlobalString("config"); path != "" {
@@ -33,7 +31,7 @@ func mergeConfig(config *server.Config, ctx *cli.Context) error {
 			// We don't error out if --config wasn't explicitly set and the
 			// default doesn't exist. But we will log a warning about it, so
 			// the user doesn't miss it.
-			logrus.Warnf("default configuration file does not exist: %s", crioConfigPath)
+			logrus.Warnf("default configuration file does not exist: %s", server.CRIOConfigPath)
 		}
 	}
 
@@ -136,7 +134,7 @@ func main() {
 	app.Flags = []cli.Flag{
 		cli.StringFlag{
 			Name:  "config",
-			Value: crioConfigPath,
+			Value: server.CRIOConfigPath,
 			Usage: "path to configuration file",
 		},
 		cli.StringFlag{
