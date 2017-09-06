@@ -14,7 +14,6 @@ import (
 	"github.com/containers/storage"
 	"github.com/containers/storage/pkg/archive"
 	"github.com/kubernetes-incubator/cri-o/libpod/common"
-	"github.com/kubernetes-incubator/cri-o/libpod/ctr"
 	"github.com/kubernetes-incubator/cri-o/libpod/images"
 	"github.com/pkg/errors"
 )
@@ -183,25 +182,25 @@ func (r *Runtime) PushImage(source string, destination string, options CopyOptio
 
 // TagImage adds a tag to the given image
 func (r *Runtime) TagImage(image *storage.Image, tag string) error {
-	return ctr.ErrNotImplemented
+	return errNotImplemented
 }
 
 // UntagImage removes a tag from the given image
 func (r *Runtime) UntagImage(image *storage.Image, tag string) error {
-	return ctr.ErrNotImplemented
+	return errNotImplemented
 }
 
 // RemoveImage deletes an image from local storage
 // Images being used by running containers cannot be removed
 func (r *Runtime) RemoveImage(image *storage.Image) error {
-	return ctr.ErrNotImplemented
+	return errNotImplemented
 }
 
 // GetImage retrieves an image matching the given name or hash from system
 // storage
 // If no matching image can be found, an error is returned
 func (r *Runtime) GetImage(image string) (*storage.Image, error) {
-	return nil, ctr.ErrNotImplemented
+	return nil, errNotImplemented
 }
 
 // GetImages retrieves all images present in storage
@@ -209,10 +208,10 @@ func (r *Runtime) GetImage(image string) (*storage.Image, error) {
 // output. Multiple filters are handled by ANDing their output, so only images
 // matching all filters are included
 func (r *Runtime) GetImages(filter ...ImageFilter) ([]*storage.Image, error) {
-	return nil, ctr.ErrNotImplemented
+	return nil, errNotImplemented
 }
 
 // ImportImage imports an OCI format image archive into storage as an image
 func (r *Runtime) ImportImage(path string) (*storage.Image, error) {
-	return nil, ctr.ErrNotImplemented
+	return nil, errNotImplemented
 }
