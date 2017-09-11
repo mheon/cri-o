@@ -182,25 +182,25 @@ func (r *Runtime) PushImage(source string, destination string, options CopyOptio
 
 // TagImage adds a tag to the given image
 func (r *Runtime) TagImage(image *storage.Image, tag string) error {
-	return errNotImplemented
+	return ErrNotImplemented
 }
 
 // UntagImage removes a tag from the given image
 func (r *Runtime) UntagImage(image *storage.Image, tag string) error {
-	return errNotImplemented
+	return ErrNotImplemented
 }
 
 // RemoveImage deletes an image from local storage
 // Images being used by running containers cannot be removed
 func (r *Runtime) RemoveImage(image *storage.Image) error {
-	return errNotImplemented
+	return ErrNotImplemented
 }
 
 // GetImage retrieves an image matching the given name or hash from system
 // storage
 // If no matching image can be found, an error is returned
 func (r *Runtime) GetImage(image string) (*storage.Image, error) {
-	return nil, errNotImplemented
+	return nil, ErrNotImplemented
 }
 
 // GetImages retrieves all images present in storage
@@ -208,10 +208,10 @@ func (r *Runtime) GetImage(image string) (*storage.Image, error) {
 // output. Multiple filters are handled by ANDing their output, so only images
 // matching all filters are included
 func (r *Runtime) GetImages(filter ...ImageFilter) ([]*storage.Image, error) {
-	return nil, errNotImplemented
+	return nil, ErrNotImplemented
 }
 
 // ImportImage imports an OCI format image archive into storage as an image
 func (r *Runtime) ImportImage(path string) (*storage.Image, error) {
-	return nil, errNotImplemented
+	return nil, ErrNotImplemented
 }
